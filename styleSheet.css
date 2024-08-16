@@ -37,7 +37,7 @@ nav{
     top: 0;
 
 }
-li a{
+nav li a{
     text-decoration: none;
     color: var(--c);
     border-bottom: solid 1px var(--a) ;
@@ -45,7 +45,7 @@ li a{
     transition-duration:width 1s ;
 
 }
-li a:hover{
+nav li a:hover{
     
     
     border-width: 100%;
@@ -74,6 +74,43 @@ strong{
 section {
     height:300vh;
     margin: 0 20px;
+}
+.title{
+    font-size:2rem;
+    text-align: center;
+    height: 5%;
+    background-color: var(--c);
+    border-bottom: var(--b) solid 1px;
+}
+hr{
+    width:50%;
+    margin: 20px auto;
+}
+section ul{
+    padding: 50px;
+    background-color: var(--b);
+    list-style:none;
+
+}
+section ul li{
+    display:inline-block;
+    text-align: center;
+    color: var(--b);
+    margin: auto 20px;
+
+}
+section ul li a{
+    text-decoration: none;
+    color: var(--b)
+}
+section div{
+    background-color: var(--c);
+    width: 200px;
+    padding-bottom: 10px;
+    margin: auto 20px;
+}
+section img{
+    width: 100%;
 }
 /* footer */
 footer {
