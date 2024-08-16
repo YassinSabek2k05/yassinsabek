@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <link rel="stylesheet" href="css.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+</head>
+
+<body>
+
+    <center>
+        <div class="class1">
+
+            <div><h1>RGB to Hexadecimal</h1></div>
+            <div class="form">
+                <form>
+                    <a class="red"><input  type="number" id="red" placeholder="Red" min="0" max="255" /></a>
+                    <a class="green"><input  type="number" id="green" placeholder="Green" min="0" max="255" /></a>
+                    <a class="blue"><input  type="number" id="blue" placeholder="Blue" min="0" max="255" /></a>
+                </form>
+                <button class="btn" id="submit-button" type="submit" pys-onClick="my_function">Submit</button>
+                <div style="font-size:47pt;" id="test-output"></div>
+            </div>
+        </div>
+
+            <py-script>
+
+                def bin_to_hex(n):
+                    j=len(n)-1
+                    i=1
+                    f=0
+                    sum=0
+                    h=''
+                    while j>=0:
+                        if int(n[j])==1:
+                            sum+=2**f
+                        if i==4 or j==0:
+                            h=hex(sum)+h
+                            f=-1
+                            i=0
+                            sum=0
+                        j-=1
+                        i+=1
+                        f+=1
+                    return h
+
+                def rgb_to_binary(n):
+                    s=''
+                    while n>0:
+                        s=str(n%2)+s
+                        n//=2
+                    if s=='':
+                        s='0'
+                    return s
+                def rgb_to_binary(n):
+                    s=''
+                    while n>0:
+                        s=str(n%2)+s
+                        n//=2
+                    return s
+                def hex(n):
+                    if n==10:
+                        return 'A'
+                    if n==11:
+                        return 'B'
+                    if n==12:
+                        return 'C'
+                    if n==13:
+                        return 'D'
+                    if n==14:
+                        return 'E'
+                    if n==15:
+                        return 'F'
+                    return str(n)
+                def bin_to_hex(n):
+                    j=len(n)-1
+                    i=1
+                    f=0
+                    sum=0
+                    h=''
+                    while j>=0:
+                        if int(n[j])==1:
+                            sum+=2**f
+                        if i==4 or j==0:
+                            h=hex(sum)+h
+                            f=-1
+                            i=0
+                            sum=0
+                        j-=1
+                        i+=1
+                        f+=1
+                    return h
+                def final(n):
+                    if len(bin_to_hex(rgb_to_binary(n)))==1:
+                        return '0'+bin_to_hex(rgb_to_binary(n))
+                    elif len(bin_to_hex(rgb_to_binary(n)))==0:
+                        return '00'
+                    return bin_to_hex(rgb_to_binary(n))
+                def my_function(*args, **kwargs):
+                    red = int(Element('red').element.value)
+                    green = int(Element('green').element.value)
+                    blue = int(Element('blue').element.value)
+                    if red>255 or red< 0 or blue>255 or blue< 0 or green>255 or green< 0:
+                        Element('test-output').element.innerText = 'out of range(range:0~255)'
+                        document.body.style.backgroundColor = '#FFFFFF'
+                    else:
+                        red = final(red)
+                        blue = final(blue)
+                        green = final(green)
+                        text = '#'+red+green+blue
+                        document.body.style.backgroundColor = text
+                        Element('test-output').element.innerText = text
+
+
+                    
+
+            </py-script>
+
+    </center>
+</body>
+</html>
