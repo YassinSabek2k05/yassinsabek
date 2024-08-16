@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Counter</title>
+</head>
+<body>
+    <h1>Current</h1>
+    <h2 id="count">0</h2>
+    <button onclick="increment()">increment</button>
+    <script>
+        function increment(){
+            let current = document.getElementById("count").innerText
+            document.getElementById("count").innerText++
+        }
+    </script>
+</body>
+</html>
