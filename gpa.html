@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Home</title>
+        <nav>
+            <div class="menu">
+                <a href="index.html">Home</a>
+                <a href="projects.html">My Projects</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+
+        </nav>
+    </head>
+    <body>
+        <form>
+            <legend>GPA calculator</legend>
+            <label for="cars">Choose a car:</label>
+            <fieldset>   
+                <select type="text" list="grades"></select>
+              <input type="text" list="grades"> 
+              <input type="text" list="grades"> 
+              <input type="text" list="grades">
+            
+            </fieldset>
+    </form>
+        <select id="grades">
+            <option value="A+">A+</option>
+            <option value="A">A</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B">B</option>
+            <option value="B-">B-</option>
+            <option value="C+">C+</option>
+            <option value="C">C</option>
+            <option value="C-">C-</option>
+            <option value="D+">D+</option>
+            <option value="D">D</option>
+            <option value="F">F</option>
+        </select>
+    </body>
+    <script>
+        function myFunction() {
+            document.getElementsByTagName("H1")[0].style.color = "red";
+        }
+        function myFunction1() {
+            document.getElementsByTagName("H1")[0].style.color = "black";
+        }
+    </script>
+</html>
