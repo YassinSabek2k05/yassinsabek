@@ -9,4 +9,3 @@ function myFunction() {
 function myFunction1() {
     document.getElementsByTagName("H1")[0].style.color = "black";
 }
-alert("Hello! I am an alert box!!");
